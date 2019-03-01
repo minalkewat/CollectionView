@@ -14,6 +14,8 @@
 		16923FD62226862700E90D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16923FD42226862700E90D72 /* LaunchScreen.storyboard */; };
 		16923FE12226862700E90D72 /* CollectionViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16923FE02226862700E90D72 /* CollectionViewDemoTests.swift */; };
 		16923FEC2226862700E90D72 /* CollectionViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16923FEB2226862700E90D72 /* CollectionViewDemoUITests.swift */; };
+		16923FFA2226881700E90D72 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16923FF92226881700E90D72 /* CustomCollectionViewCell.swift */; };
+		16DFDE452228FD7600BF5B0E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DFDE442228FD7600BF5B0E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		16923FE72226862700E90D72 /* CollectionViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16923FEB2226862700E90D72 /* CollectionViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDemoUITests.swift; sourceTree = "<group>"; };
 		16923FED2226862700E90D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16923FF92226881700E90D72 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		16DFDE442228FD7600BF5B0E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				16923FD22226862700E90D72 /* Assets.xcassets */,
 				16923FD42226862700E90D72 /* LaunchScreen.storyboard */,
 				16923FD72226862700E90D72 /* Info.plist */,
+				16923FF92226881700E90D72 /* CustomCollectionViewCell.swift */,
+				16DFDE442228FD7600BF5B0E /* DetailViewController.swift */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16923FCE2226862500E90D72 /* ViewController.swift in Sources */,
+				16923FFA2226881700E90D72 /* CustomCollectionViewCell.swift in Sources */,
 				16923FCC2226862500E90D72 /* AppDelegate.swift in Sources */,
+				16DFDE452228FD7600BF5B0E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2F5MW64QA;
 				INFOPLIST_FILE = CollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2F5MW64QA;
 				INFOPLIST_FILE = CollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
