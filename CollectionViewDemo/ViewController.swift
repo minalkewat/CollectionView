@@ -16,7 +16,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         cell.img.image = actressImage[indexPath.row]
-        cell.lbl.text = actressNames[indexPath.row]
+       // cell.lbl.text = actressNames[indexPath.row]
         cell.index = indexPath
         cell.delegate = self
         return cell
@@ -30,19 +30,29 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var imagePicker = UIImagePickerController()
+    
     var actressNames = ["Natalie Portman","Scarlett Johansson","Jennifer Lawrence","Emma Stone","Gal Gadot","Alexandra Daddario","Natalie Portman","Scarlett Johansson","Jennifer Lawrence","Emma Stone","Gal Gadot","Alexandra Daddario","Natalie Portman","Scarlett Johansson","Jennifer Lawrence","Emma Stone","Gal Gadot","Alexandra Daddario","Natalie Portman","Scarlett Johansson","Jennifer Lawrence","Emma Stone","Gal Gadot","Alexandra Daddario"]
     
     var actressImage = [UIImage(named: "Natalie Portman"),UIImage(named: "Scarlett Johansson"),UIImage(named: "jennifer"),UIImage(named: "Emma Stone"),UIImage(named: "c"),UIImage(named: "Alexandra Daddario"),UIImage(named: "Natalie Portman"),UIImage(named: "Scarlett Johansson"),UIImage(named: "jennifer"),UIImage(named: "Emma Stone"),UIImage(named: "c"),UIImage(named: "Alexandra Daddario"),UIImage(named: "Natalie Portman"),UIImage(named: "Scarlett Johansson"),UIImage(named: "jennifer"),UIImage(named: "Emma Stone"),UIImage(named: "c"),UIImage(named: "Alexandra Daddario"),UIImage(named: "Natalie Portman"),UIImage(named: "Scarlett Johansson"),UIImage(named: "jennifer"),UIImage(named: "Emma Stone"),UIImage(named: "c"),UIImage(named: "Alexandra Daddario")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
     }
+    
+    @IBAction func onAddClick(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: dataCollectionviewProtocol{
     func showData(indx: Int) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.nam = actressNames[indx]
+      //  vc?.nam = actressNames[indx]
         vc?.imag = actressImage[indx]!
         self.navigationController?.pushViewController(vc!, animated: true)
         
@@ -54,6 +64,17 @@ extension ViewController: dataCollectionviewProtocol{
     }
     
     
+}
+
+extension ViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+        actressImage.append(image)
+            collectionView.reloadData()
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout{

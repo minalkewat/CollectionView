@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xj7-mD-kId">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <color key="backgroundColor" red="1" green="0.1679920241" blue="0.15218210200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DB5-4x-Gjn">
                                     <size key="itemSize" width="375" height="227"/>
@@ -38,7 +38,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udS-mH-hlZ">
                                                     <rect key="frame" x="0.0" y="20" width="375" height="111"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gr-A0-rbF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gr-A0-rbF">
                                                     <rect key="frame" x="16" y="143" width="343" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="V1t-W8-HOY"/>
@@ -104,13 +104,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xfc-SI-LVd"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvy-4S-Hs6">
+                                <rect key="frame" x="299" y="74" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.63541005709999998" green="0.099501111650000001" blue="0.1003376542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Hsa-l9-IcD"/>
+                                    <constraint firstAttribute="height" constant="30" id="qc3-2p-Jev"/>
+                                </constraints>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rBO-Cs-0zH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vvy-4S-Hs6" secondAttribute="trailing" constant="16" id="8f0-xR-t0W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xj7-mD-kId" secondAttribute="bottom" id="CHD-ip-JJ3"/>
+                            <constraint firstItem="xj7-mD-kId" firstAttribute="top" secondItem="Vvy-4S-Hs6" secondAttribute="bottom" constant="20" id="UCC-69-Xk4"/>
                             <constraint firstItem="xj7-mD-kId" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yms-fd-vSn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xj7-mD-kId" secondAttribute="trailing" id="cUg-i5-nXa"/>
-                            <constraint firstItem="xj7-mD-kId" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rOJ-8K-nnV"/>
+                            <constraint firstItem="Vvy-4S-Hs6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qnz-5C-2Ge"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
